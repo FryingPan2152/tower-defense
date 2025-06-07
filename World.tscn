@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://by14qtbdi3mds"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_r8odi"]
+[ext_resource type="Script" path="res://world.gd" id="1_vxrfi"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_isng5"]
+vertices = PackedVector3Array(-26.7216, 1, -3.24017, -12.9716, 1, -2.99017, -12.7216, 1, -4.74017, -10.7216, 1, -23.2402, -26.7216, 1, -23.2402, -10.7216, 1, -4.74017, -8.47165, 1, -4.74017, -8.47165, 1, -23.2402, -6.47165, 1, -4.74017, -6.22165, 1, -2.49017, 26.7784, 1, -2.49017, 26.7784, 1, -23.2402, -11.9716, 4.25, -3.74017, -11.9716, 4.25, 4.50983, -7.22165, 4.25, 4.50983, -7.22165, 4.25, -3.74017, -11.7216, 1, -3.49017, -11.7216, 1, 4.25983, -7.47165, 1, 4.25983, -7.47165, 1, -3.49017, -26.7216, 1, 4.00983, -12.9716, 1, 3.75983, -6.22165, 1, 3.25983, 26.7784, 1, 3.25983, -6.22165, 1, 5.25983, -7.97165, 1, 5.50983, -7.72165, 1, 23.2598, 26.7784, 1, 23.2598, -12.9716, 1, 5.25983, -11.2216, 1, 5.50983, -26.7216, 1, 23.2598, -11.4716, 1, 23.2598)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(3, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(8, 6, 7), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(10, 7, 11), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(21, 20, 1), PackedInt32Array(1, 20, 0), PackedInt32Array(9, 10, 22), PackedInt32Array(22, 10, 23), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(27, 24, 23), PackedInt32Array(24, 22, 23), PackedInt32Array(20, 21, 28), PackedInt32Array(28, 29, 20), PackedInt32Array(20, 29, 31), PackedInt32Array(20, 31, 30), PackedInt32Array(29, 25, 31), PackedInt32Array(31, 25, 26)]
+geometry_parsed_geometry_type = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb3pe"]
+albedo_color = Color(0.201527, 0.201527, 0.201527, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_vxrfi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.848649, 0.528957, 0, -0.528957, 0.848649, 0, 23, 23.9079)
+script = ExtResource("1_r8odi")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_isng5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+use_collision = true
+size = Vector3(54.4433, 1, 47.4803)
+material = SubResource("StandardMaterial3D_yb3pe")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57981, 1.63385, 0.436523)
+use_collision = true
+size = Vector3(5.57214, 4.2677, 9.03516)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
