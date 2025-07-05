@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://x71jk41catqm"]
 
-[ext_resource type="Script" path="res://base_tower.gd" id="1_lkkop"]
+[ext_resource type="Script" uid="uid://bi654fbynui2y" path="res://base_tower.gd" id="1_lkkop"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwo4h"]
+size = Vector3(3, 3, 3)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_lkkop")
