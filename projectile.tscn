@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://mog06lwa8qy0"]
+
+[ext_resource type="Script" uid="uid://ba1t7oi3wuui7" path="res://projectile.gd" id="1_a85iw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a85iw"]
+
+[node name="Projectile" type="Node3D"]
+script = ExtResource("1_a85iw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(0.5, 1, 1)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_a85iw")

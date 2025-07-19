@@ -2,6 +2,7 @@ extends Camera3D
 
 var mouseposition
 @onready var raycast:=$RayCast3D
+var tower_selected = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if Input.is_action_just_pressed("tower1"):
+		tower_selected=1
+	if Input.is_action_just_pressed("tower2"):
+		tower_selected=2
+	
+	
 	#print(mouseposition)
 	#var project = project_position(mouseposition,1.0)
 	#var direction = (project - position).normalized()
@@ -17,7 +25,12 @@ func _process(delta):
 	raycast.target_position=direction*50
 	if raycast.is_colliding():
 		if Input.is_action_just_pressed("click"):
-			var tower = preload("res://Base_tower.tscn").instantiate()
+			var tower: Tower
+			if tower_selected == 1:
+				tower = preload("res://Base_tower.tscn").instantiate()
+			if tower_selected == 2:
+				tower = preload("res://John.tscn").instantiate()
+				
 			tower.global_position = raycast.get_collision_point()
 			var collider = raycast.get_collider()
 			var parent = collider.get_parent()

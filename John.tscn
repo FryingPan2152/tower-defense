@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cex5qcni5muyg"]
+
+[ext_resource type="PackedScene" uid="uid://x71jk41catqm" path="res://Base_tower.tscn" id="1_oe4he"]
+[ext_resource type="Script" uid="uid://bvpub8ucxeg6n" path="res://john.gd" id="2_q40c6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oe4he"]
+radius = 5.0
+
+[node name="Node3D" instance=ExtResource("1_oe4he")]
+script = ExtResource("2_q40c6")
+
+[node name="Area3D" type="Area3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("SphereShape3D_oe4he")
+
+[node name="ShootTimer" type="Timer" parent="." index="5"]
+wait_time = 0.25
+one_shot = true
