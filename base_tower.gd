@@ -20,6 +20,6 @@ func _process(delta):
 
 func _on_timer_timeout():
 	if get_parent() is NavigationRegion3D:
-		#print("baking")
-		#get_parent().bake_navigation_mesh(true)
+		print("baking")
+		get_parent().bake_navigation_mesh(true)
 		pass

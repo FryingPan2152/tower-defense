@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://by14qtbdi3mds"]
+[gd_scene load_steps=9 format=3 uid="uid://by14qtbdi3mds"]
 
 [ext_resource type="Script" uid="uid://dhkyami0b2fy7" path="res://Player.gd" id="1_r8odi"]
 [ext_resource type="Script" uid="uid://bl0ep6le2s3o7" path="res://world.gd" id="1_vxrfi"]
 [ext_resource type="PackedScene" uid="uid://ctkpmonb1djsv" path="res://destination.tscn" id="3_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://bnftusb3y23n1" path="res://player_ui_money.tscn" id="3_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://cilm5e8ee4qub" path="res://Enemy_Spawner.tscn" id="4_js7pq"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_isng5"]
@@ -22,6 +23,8 @@ script = ExtResource("1_vxrfi")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.848649, 0.528957, 0, -0.528957, 0.848649, 0, 23, 23.9079)
 script = ExtResource("1_r8odi")
+
+[node name="Control" parent="Camera3D" instance=ExtResource("3_eu7l1")]
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 

@@ -5,10 +5,14 @@ extends CharacterBody3D
 @onready var light: OmniLight3D= $OmniLight3D
 
 var health: = 200
+var base_damage:= 1.0
 var MAXHEALTH := 200
+var died = false
 
 func _process(delta: float) -> void:
-	if health <= 0.0: 
+	if health <= 0.0 && died == false: 
+		died = true
+		Globals.player_money += 1.0
 		queue_free()
 	light.light_energy = (health/MAXHEALTH)*16
 

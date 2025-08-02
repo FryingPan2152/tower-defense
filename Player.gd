@@ -1,6 +1,6 @@
 extends Camera3D
 
-var mouseposition
+var mouseposition = Vector2(0,0)
 @onready var raycast:=$RayCast3D
 var tower_selected = 1
 
