@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://tf6nk4rok528"]
+
+[ext_resource type="Script" uid="uid://dhkyami0b2fy7" path="res://Player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bnftusb3y23n1" path="res://player_ui_money.tscn" id="2_i3pqv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_onrkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_onrkg"]
+font_color = Color(0.607843, 0.65098, 0.929412, 1)
+outline_color = Color(0.196078, 0.690196, 0.862745, 0.823529)
+shadow_color = Color(0.301961, 0.294118, 0.784314, 0.901961)
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.848649, 0.528957, 0, -0.528957, 0.848649, 0, 0, 0)
+script = ExtResource("1_onrkg")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="tower_inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 385.0
+offset_bottom = 301.0
+
+[node name="Label" type="Label" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 170.0
+offset_right = 442.0
+offset_bottom = 193.0
+text = "58419894984"
+
+[node name="ColorRect" type="ColorRect" parent="tower_inventory"]
+material = SubResource("CanvasItemMaterial_onrkg")
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 10.0
+offset_right = 1141.0
+offset_bottom = 71.0
+color = Color(0.380392, 0.380392, 0.929412, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 11.0
+offset_right = 1140.0
+offset_bottom = 70.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 903.0
+offset_top = 8.0
+offset_right = 1203.0
+offset_bottom = 64.0
+scale = Vector2(2.5, 2.5)
+theme_type_variation = &"GraphNodeTitleLabel"
+text = "Tower List"
+label_settings = SubResource("LabelSettings_onrkg")
+visible_characters = 10
+
+[node name="Label3" type="Label" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 67.0
+offset_right = 98.0
+offset_bottom = 93.0
+scale = Vector2(2, 2)
+text = "01"
+
+[node name="ColorRect4" type="ColorRect" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 76.0
+offset_right = 132.0
+offset_bottom = 124.0
+rotation = 0.616388
+color = Color(0, 0.712203, 0.76315, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="tower_inventory"]
+layout_mode = 0
+offset_left = 104.007
+offset_top = 61.0
+offset_right = 143.007
+offset_bottom = 142.0
+rotation = 0.619137
+color = Color(0, 0, 0, 1)
+
+[node name="Control" parent="." instance=ExtResource("2_i3pqv")]
+offset_left = 953.0
+offset_top = 307.0
+offset_right = 953.0
+offset_bottom = 307.0

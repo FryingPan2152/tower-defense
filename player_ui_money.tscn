@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnftusb3y23n1"]
+[gd_scene load_steps=3 format=3 uid="uid://bnftusb3y23n1"]
 
 [ext_resource type="Script" uid="uid://r3a4ol13eujq" path="res://player_ui_money.gd" id="1_vccy0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vccy0"]
+font_color = Color(0.168627, 0.454902, 1, 1)
+shadow_color = Color(0.33571, 0.679174, 0.874257, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,3 +20,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "MONEYAAAA"
+label_settings = SubResource("LabelSettings_vccy0")

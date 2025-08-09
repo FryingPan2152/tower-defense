@@ -3,9 +3,11 @@ extends Camera3D
 var mouseposition = Vector2(0,0)
 @onready var raycast:=$RayCast3D
 var tower_selected = 1
+@onready var inventory_control := $tower_inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	inventory_control.visible = false
 	pass # Replace with function body.
 
 
@@ -16,6 +18,8 @@ func _process(delta):
 		tower_selected=1
 	if Input.is_action_just_pressed("tower2"):
 		tower_selected=2
+	if Input.is_action_just_pressed("tower_inventory"):
+		inventory_control.visible = !inventory_control.visible
 	
 	
 	#print(mouseposition)
