@@ -8,7 +8,7 @@ func _on_timer_timeout() -> void:
 	var enemy = enemy_s.instantiate()
 	enemy.global_position = global_position
 	enemy.destination = destinaiton
-	enemy.health = (enemy_spawn_count*10) + 100 
+	enemy.health = (enemy_spawn_count*2) + 100 
 	enemy.MAXHEALTH = enemy.health
 	get_parent().add_child(enemy)
 	enemy_spawn_count += 5

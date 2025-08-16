@@ -51,3 +51,11 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouseposition = event.position
+
+
+func _on_tower_1_button_pressed() -> void:
+	tower_selected=1
+
+
+func _on_tower_2_button_pressed() -> void:
+	tower_selected=2
