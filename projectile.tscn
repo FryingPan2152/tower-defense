@@ -1,24 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://mog06lwa8qy0"]
+[gd_scene load_steps=7 format=3 uid="uid://mog06lwa8qy0"]
 
 [ext_resource type="Script" uid="uid://ba1t7oi3wuui7" path="res://projectile.gd" id="1_a85iw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a85iw"]
-emission_enabled = true
-emission = Color(0.755922, 0.234448, 0, 1)
-emission_energy_multiplier = 7.74
-grow = true
-grow_amount = 16.0
+transparency = 1
+albedo_color = Color(0.717647, 0, 0, 0.709804)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a85iw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a85iw"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxf0c"]
+albedo_color = Color(0.627451, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_a85iw"]
+height = 0.991
+radial_segments = 4
+rings = 1
+is_hemisphere = true
+
 [node name="Projectile" type="Node3D"]
 script = ExtResource("1_a85iw")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.141893, 0, 29.9997, 0, 30, 0, -29.9997, 0, -0.141893, 5.515, -0.0615351, 0.0283327)
-size = Vector3(0.001, 0.001, 0.363488)
+transform = Transform3D(-0.709466, 0, 149.998, 0, 150, 0, -149.998, 0, -0.709466, -3.57628e-05, 0.00922185, -0.0220153)
+size = Vector3(0.001, 0.001, 0.0192751)
+material = SubResource("StandardMaterial3D_a85iw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-0.00472977, 0, 0.999989, 0, 1, 0, -0.999989, 0, -0.00472977, -0.000139695, -3.3598e-05, -4.14715e-05)
+size = Vector3(0.001, 0.001, 0.0192751)
 material = SubResource("StandardMaterial3D_a85iw")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -27,17 +38,31 @@ material = SubResource("StandardMaterial3D_a85iw")
 shape = SubResource("SphereShape3D_a85iw")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-light_color = Color(1, 0.0901961, 0.101961, 1)
+light_color = Color(0.605234, 0, 0.022339, 1)
+light_energy = 16.0
+omni_range = 0.7
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42571, 0, 0)
+light_color = Color(0.605234, 0, 0.022339, 1)
+light_energy = 16.0
+omni_range = 0.7
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D2/OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.429, 0, 1.34826)
+light_color = Color(0.605234, 0, 0.022339, 1)
 light_energy = 16.0
 omni_range = 0.7
 omni_shadow_mode = 0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0377749, -0.0646915, 0.0310086)
-light_color = Color(1, 0, 0.372549, 1)
+light_color = Color(1, 0.243137, 0, 1)
 light_energy = 16.0
 light_size = 0.18
-omni_range = 0.7
+omni_range = 1.287
 omni_attenuation = -1.0
 omni_shadow_mode = 0
 
@@ -48,3 +73,38 @@ gi_mode = 2
 gi_lightmap_texel_scale = 2.81
 radius = 0.962814
 material = SubResource("ShaderMaterial_a85iw")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.014152, 0)
+height = 0.0900574
+material = SubResource("StandardMaterial3D_qxf0c")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.40114)
+light_color = Color(0.605234, 0, 0.022339, 1)
+light_energy = 16.0
+omni_range = 0.7
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37364, 0, 1.38144)
+light_color = Color(0.605234, 0, 0.022339, 1)
+light_energy = 16.0
+omni_range = 0.7
+omni_shadow_mode = 0
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-0.0038313, 0.489982, 0.00176162, 0.489985, 0.00383127, 1.37744e-05, 1.16415e-10, 0.00176168, -0.489997, 1.35416, -0.00598539, -0.0146222)
+mesh = SubResource("SphereMesh_a85iw")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(7.75733e-06, 0.000769669, -0.489999, 0.489985, 0.00383127, 1.37744e-05, 0.00383129, -0.489984, -0.000769584, -0.000359431, -0.00598539, -1.26822)
+mesh = SubResource("SphereMesh_a85iw")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.00383117, -0.489952, -0.0057126, 0.489985, 0.00383127, 1.37744e-05, 3.08931e-05, -0.00571253, 0.489967, -1.32594, -0.00598539, -0.0146222)
+mesh = SubResource("SphereMesh_a85iw")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(3.65769e-05, -0.00643934, 0.489958, 0.489985, 0.00383127, 1.37744e-05, -0.00383112, 0.489943, 0.00643943, -0.00765419, -0.00598539, 1.30481)
+mesh = SubResource("SphereMesh_a85iw")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://by14qtbdi3mds"]
+[gd_scene load_steps=9 format=3 uid="uid://by14qtbdi3mds"]
 
 [ext_resource type="Script" uid="uid://bl0ep6le2s3o7" path="res://world.gd" id="1_vxrfi"]
 [ext_resource type="PackedScene" uid="uid://tf6nk4rok528" path="res://player.tscn" id="2_js7pq"]
 [ext_resource type="PackedScene" uid="uid://ctkpmonb1djsv" path="res://destination.tscn" id="3_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://cilm5e8ee4qub" path="res://Enemy_Spawner.tscn" id="4_js7pq"]
+[ext_resource type="PackedScene" uid="uid://mog06lwa8qy0" path="res://projectile.tscn" id="5_eu7l1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_isng5"]
 vertices = PackedVector3Array(-26.7303, 0.962042, -3.24015, -12.9803, 0.962042, -2.99015, -12.7303, 0.962042, -4.74015, -10.7303, 0.962042, -23.2402, -26.7303, 0.962042, -23.2402, -10.7303, 0.962042, -4.74015, -8.48032, 0.962042, -4.74015, -8.48032, 0.962042, -23.2402, -6.23032, 0.962042, -1.99015, -5.23032, 0.962042, -1.74015, -4.98032, 0.962042, -3.49015, -6.23032, 0.962042, -4.49015, 2.01968, 0.962042, -3.49015, 2.26968, 0.962042, -23.2402, 3.51968, 0.962042, -3.49015, 3.51968, 1.21204, -2.99015, 26.7697, 0.962042, -2.99015, 26.7697, 0.962042, -23.2402, -6.98032, 4.21204, -2.49015, -7.23032, 4.21204, -3.74015, -10.4803, 4.21204, -3.99015, -10.4803, 4.21204, 4.75985, -7.23032, 4.21204, 4.50985, -6.98032, 4.21204, 3.00985, -4.98032, 3.96204, 3.00985, -4.98032, 3.96204, -2.49015, -38.9803, 11.462, 14.5098, -10.4803, 4.21204, 14.5098, -38.9803, 11.462, -14.7402, -10.4803, 4.21204, -14.7402, -11.7303, 0.962042, -3.49015, -11.7303, 0.962042, 4.25985, -7.48032, 0.962042, 4.25985, -7.48032, 0.962042, -3.49015, -26.7303, 0.962042, 4.00985, -12.9803, 0.962042, 3.75985, 1.51968, 1.96204, -2.49015, 1.51968, 1.96204, 3.00985, 3.51968, 1.21204, 3.00985, 3.51968, 1.21204, -2.49015, 26.7697, 0.962042, 3.50985, 3.51968, 1.21204, 3.50985, -3.50532, 3.21204, -1.26515, -4.98032, 0.962042, 4.00985, -6.23032, 0.962042, 5.25985, -7.98032, 0.962042, 5.50985, -7.73032, 0.962042, 23.2598, 2.01968, 0.962042, 4.00985, 2.26968, 0.962042, 23.2598, 3.51968, 0.962042, 4.00985, 26.7697, 0.962042, 23.2598, -12.9803, 0.962042, 5.25985, -11.2303, 0.962042, 5.50985, -26.7303, 0.962042, 23.2598, -11.4803, 0.962042, 23.2598)
@@ -31,7 +32,7 @@ size = Vector3(54.4433, 1, 47.4803)
 material = SubResource("StandardMaterial3D_yb3pe")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57981, 1.63385, 0.436523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57981, 1.63385, 0.547683)
 use_collision = true
 size = Vector3(5.57214, 4.2677, 9.03516)
 
@@ -55,5 +56,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9208, 11.2986, 0.524038)
 [node name="Node3D2" parent="." node_paths=PackedStringArray("destinaiton") instance=ExtResource("4_js7pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7582, 2.91656, -2.9563)
 destinaiton = NodePath("../Node3D")
+
+[node name="Projectile" parent="." instance=ExtResource("5_eu7l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0656, 6.9765, -0.898422)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
