@@ -18,5 +18,9 @@ func _physics_process(delta: float) -> void:
 			base_health -= body.base_damage
 			print(base_health)
 			body.queue_free()
+		if body is FlyingEnemy:
+			base_health -= body.base_damage
+			print(base_health)
+			body.queue_free()
 	pass
 	

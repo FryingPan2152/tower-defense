@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://tq8etw3ek560"]
+
+[ext_resource type="Script" uid="uid://dati4kpii0dun" path="res://flying_Enemy.gd" id="1_a202f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xowi"]
+albedo_color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a202f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a0tk4"]
+top_radius = 0.0
+bottom_radius = 0.65
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[node name="flying_Enemy" type="CharacterBody3D"]
+script = ExtResource("1_a202f")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.51352, 0)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Node3D"]
+transform = Transform3D(0.991388, 0, 0, 0, 0.991388, 0, 0, 0, 0.991388, 0, 1.10703, 0)
+sides = 16
+ring_sides = 9
+material = SubResource("StandardMaterial3D_4xowi")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.508836, 0, 0, 0, 1, 0, 1.22001, 0)
+mesh = SubResource("CapsuleMesh_a202f")
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.665791, 0, 0, 0, 1, 0, 1.0549, 0)
+gi_mode = 2
+gi_lightmap_texel_scale = 10.0
+mesh = SubResource("CylinderMesh_a0tk4")
+material = SubResource("StandardMaterial3D_a202f")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0808678, 1.76787, 0)
+light_energy = 8.273
+omni_range = 1.088
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.46042, 0)
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1409, -1.31252, 0.0450745)
+size = Vector3(5.86407, 0.508667, 5.83929)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.2306, 0)
+light_color = Color(0.34902, 1, 0, 1)
+light_energy = 10.858
+light_indirect_energy = 5.525
+light_volumetric_fog_energy = 4.232
+light_size = 0.273
+spot_range = 12.599
+spot_angle = 23.6906

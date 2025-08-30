@@ -11,6 +11,10 @@ func _physics_process(delta: float) -> void:
 				body.health -= 100
 				hit = true
 				queue_free()
+			if body is FlyingEnemy:
+				body.health -= 50
+				hit = true
+				queue_free()
 	
 	
 	global_position += velocity * delta

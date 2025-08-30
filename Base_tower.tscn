@@ -12,8 +12,8 @@ script = ExtResource("1_lkkop")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05268, 0)
-light_color = Color(0.152941, 0.752941, 0, 1)
-light_energy = 0.0
+light_color = Color(0.387393, 0.676708, 0.732012, 1)
+light_energy = 7.265
 omni_range = 31.748
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]

@@ -14,3 +14,11 @@ func _process(delta: float) -> void:
 			proj.global_position = global_position
 			get_parent().add_child(proj)
 			shootTimer.start()
+		if body is FlyingEnemy and shootTimer.is_stopped():
+			#body.health -= 200*delta 
+			var proj = preload("res://projectile.tscn").instantiate()
+			var dir = (body.global_position - global_position).normalized()
+			proj.velocity = dir * 40
+			proj.global_position = global_position
+			get_parent().add_child(proj)
+			shootTimer.start()
