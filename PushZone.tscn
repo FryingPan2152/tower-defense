@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7q4rsjmvg23"]
+
+[ext_resource type="Script" uid="uid://p5g04ikk8tqu" path="res://pushzone.gd" id="1_vhaf2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(3, 3, 3)
+
+[node name="PushZone" type="Node3D"]
+script = ExtResource("1_vhaf2")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(3, 3, 3)
