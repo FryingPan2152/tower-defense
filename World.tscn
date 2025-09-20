@@ -23,7 +23,7 @@ script = ExtResource("1_vxrfi")
 transform = Transform3D(0.429712, -0.75803, 0.490651, 0.127756, 0.58895, 0.798008, -0.893883, -0.28023, 0.349921, 9.46657, 28.6839, 37.125)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9447, -18.0812, -6.80148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44321, -2.2499, -3.11527)
 navigation_mesh = SubResource("NavigationMesh_isng5")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D"]
