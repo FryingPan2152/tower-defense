@@ -21,6 +21,41 @@ func _process(delta):
 	if Input.is_action_just_pressed("tower_inventory"):
 		inventory_control.visible = !inventory_control.visible
 	
+	#position.x += 10
+	if Input.is_action_pressed("forward"):
+		
+		var forward_no_z = -basis.z
+		forward_no_z.y = 0
+		
+		if Input.is_action_pressed("camer speed modifier"):
+			position += forward_no_z * delta * 40
+		else:
+			position += forward_no_z * delta * 10
+		
+		
+	if Input.is_action_pressed("backward"):
+		var forward_no_z = basis.z
+		forward_no_z.y = 0
+		if Input.is_action_pressed("camer speed modifier"):
+			position += forward_no_z * delta * 40
+		else:
+			position += forward_no_z * delta * 10
+		
+		position += forward_no_z * delta * 10
+	if Input.is_action_pressed("left"):
+		position += -basis.x * delta * 10
+		if Input.is_action_pressed("camer speed modifier"):
+			position += -basis.x * delta * 40
+		else:
+			position += -basis.x * delta * 10
+	if Input.is_action_pressed("right"):
+		position += basis.x * delta * 10
+		if Input.is_action_pressed("camer speed modifier"):
+			position += +basis.x * delta * 40
+		else:
+			position += +basis.x * delta * 10
+	
+	
 	
 	#print(mouseposition)
 	#var project = project_position(mouseposition,1.0)
@@ -50,7 +85,15 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		mouseposition = event.position
+		
+		if Input.is_action_pressed("Camera grab"):
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			var delta = event.relative
+			rotation.y -= delta.x * 0.001
+			rotation.x -= delta.y * 0.001
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			mouseposition = event.position
 
 
 func _on_tower_1_button_pressed() -> void:
