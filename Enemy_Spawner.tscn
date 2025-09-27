@@ -1,11 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://cilm5e8ee4qub"]
+[gd_scene load_steps=7 format=3 uid="uid://cilm5e8ee4qub"]
 
 [ext_resource type="Script" uid="uid://bifmykwnlrv14" path="res://enemy_spawner.gd" id="1_xkvsk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xkvsk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xkvsk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr6jk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_qfyqk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsyy4"]
+albedo_color = Color(0.247059, 0.392157, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_xkvsk")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.471193, 0.901416)
+mesh = SubResource("BoxMesh_xkvsk")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-3.0598e-07, 5, -8.74228e-07, 0, -2.18557e-07, -20, -7, -2.18557e-07, 3.82137e-14, -0.45779, -4.96993, 0.870046)
+mesh = SubResource("CylinderMesh_xkvsk")
+material = SubResource("StandardMaterial3D_dr6jk")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.80825e-07, 0, 10, 0, 3, 0, -11, 0, -4.37114e-07, 0, 6.93979, 0.877503)
+mesh = SubResource("PrismMesh_qfyqk")
+material = SubResource("StandardMaterial3D_bsyy4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
