@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn2aqgjve6kun"]
+[gd_scene load_steps=12 format=3 uid="uid://cn2aqgjve6kun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmmi"]
 
@@ -9,6 +9,157 @@
 [sub_resource type="BoxMesh" id="BoxMesh_o37fn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67uoj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o37fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj0pc"]
+
+[sub_resource type="Animation" id="Animation_jmmmi"]
+resource_name = "test_animation_1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("LogoNode:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 2, 2.2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5708, 0.567232), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("LogoNode:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.76667, 2, 2.2, 3.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(2.8, 2.8, 2.8), Vector3(3, 2, 3), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LogoNode/LogoLight:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.96667, 2.96667, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.5, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LogoNode/LogoLight:light_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.83333, 2.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LogoNode/LogoLight:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.7, 1.83, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LogoNode/LogoLight:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 0.47, 0.82, 1.26, 1.72, 2.06, 2.53, 3.15, 3.72, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.886662, 13.071, 1.05795), Vector3(-1.88666, 12.071, 1.05795), Vector3(2.50355, 15.2008, 1.05795), Vector3(-1.73918, 13.7847, 1.05795), Vector3(-3.55399, 19.0307, 1.05795), Vector3(-0.529329, 12.8396, 1.05795), Vector3(2.20363, 10.8562, 1.05795), Vector3(0.237282, 12.2565, 1.05795), Vector3(1.3195, 14.7229, 1.05795), Vector3(-1.17216, 12.983, 1.05795)]
+}
+
+[sub_resource type="Animation" id="Animation_pus3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoNode:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LogoNode/LogoLight:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LogoNode/LogoLight:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LogoNode/LogoLight:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LogoNode/LogoLight:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.886662, 13.071, 1.05795)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bcaun"]
+_data = {
+&"RESET": SubResource("Animation_pus3r"),
+&"test_animation_1": SubResource("Animation_jmmmi")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pus3r"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -26,19 +177,43 @@ material = SubResource("StandardMaterial3D_67uoj")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87593, 3.39131, 2.47183)
 size = Vector3(0.970781, 7.20672, 5.81708)
+material = SubResource("StandardMaterial3D_o37fn")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78607, -0.00251055, -0.0143991)
 size = Vector3(0.970781, 7.20672, 5.81708)
+material = SubResource("StandardMaterial3D_gj0pc")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bcaun")
+}
+
+[node name="LogoNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125638, 0, 0)
+
+[node name="LogoP1" type="CSGPolygon3D" parent="LogoNode"]
 transform = Transform3D(0.950097, -0.311954, 0, 0.311954, 0.950097, 0, 0, 0, 1, -2.19853, 11.6081, 0.881394)
 polygon = PackedVector2Array(6, 2, 2, 2, 1, 8, 1, 1, 0, 0)
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="."]
+[node name="LogoP2" type="CSGPolygon3D" parent="LogoNode"]
 transform = Transform3D(-0.943841, 0.330399, 0, -0.330399, -0.943841, 0, 0, 0, 1, 2.83131, 15.2254, 0.875437)
 polygon = PackedVector2Array(2, 4.065, 4, 1, 5, 1, 3, 3)
 
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="."]
+[node name="LogoP3" type="CSGPolygon3D" parent="LogoNode"]
 transform = Transform3D(-0.6773, 0.735707, 0, -0.735707, -0.6773, 0, 0, 0, 1, 1.54591, 15.4935, 0.877813)
 polygon = PackedVector2Array(0.785, 0.45, 0.86, 0.635, 6.945, 3.12, 1.12694, 0.0960698)
+
+[node name="LogoP4" type="CSGPolygon3D" parent="LogoNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96806, 11.802, 0.92062)
+visible = false
+polygon = PackedVector2Array(-1.36317, -0.000738144, -0.482805, 1.64802, 0.692655, 2.21619, 0.658801, 1.05815)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="LogoNode"]
+transform = Transform3D(0.984103, -0.177601, 0, 0.177601, 0.984103, 0, 0, 0, 0.14, -1.29658, 12.6616, 1.04143)
+polygon = PackedVector2Array(-0.124371, -0.0217714, 0.0901847, 0.446086, 0.580217, 0.769116, 0.33577, 0.291614)
+material = SubResource("StandardMaterial3D_pus3r")
+
+[node name="LogoLight" type="OmniLight3D" parent="LogoNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.886662, 13.071, 1.05795)
+visible = false

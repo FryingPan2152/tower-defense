@@ -80,7 +80,7 @@ material = SubResource("StandardMaterial3D_js7pq")
 autostart = true
 
 [node name="Node3D" parent="." instance=ExtResource("3_bcbcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68252, 14.8897, 26.9849)
+transform = Transform3D(0.101647, 0, -0.994821, 0, 1, 0, 0.994821, 0, 0.101647, -6.68252, 14.8897, 26.9849)
 
 [node name="Node3D2" parent="." node_paths=PackedStringArray("destinaiton") instance=ExtResource("4_js7pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7582, 2.91656, -2.9563)
