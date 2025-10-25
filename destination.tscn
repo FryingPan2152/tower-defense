@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctkpmonb1djsv"]
+[gd_scene load_steps=5 format=3 uid="uid://ctkpmonb1djsv"]
 
 [ext_resource type="Script" uid="uid://ctnls7xlpa50k" path="res://destination.gd" id="1_ls6s3"]
 [ext_resource type="PackedScene" uid="uid://cn2aqgjve6kun" path="res://Throne.tscn" id="2_ysfre"]
+[ext_resource type="PackedScene" uid="uid://cs4bm45hpginu" path="res://throne_guy.tscn" id="3_lgetq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qxefm"]
 radius = 5.0
 
-[node name="Node3D" type="Node3D"]
+[node name="Destination" type="Node3D"]
 script = ExtResource("1_ls6s3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -18,3 +19,6 @@ shape = SubResource("SphereShape3D_qxefm")
 
 [node name="Node3D" parent="." instance=ExtResource("2_ysfre")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -2.07763, 0)
+
+[node name="ThroneGuy" parent="." instance=ExtResource("3_lgetq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0318152, 1.39301, 1.3341)

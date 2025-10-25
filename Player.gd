@@ -76,11 +76,14 @@ func _process(delta):
 				
 			tower.global_position = raycast.get_collision_point()
 			var collider = raycast.get_collider()
-			var parent = collider.get_parent()
+			var parent: Node3D = collider.get_parent()
 			
 			if parent is NavigationRegion3D:
 				#parent.bake_navigation_mesh(false)
 				collider.get_parent().add_child(tower)
+			if parent.get_parent() is NavigationRegion3D:
+				#parent.bake_navigation_mesh(false)
+				collider.get_parent().get_parent().add_child(tower)
 				
 	#var dropPlane = Plane(Vector3(0,1,0))
 	
