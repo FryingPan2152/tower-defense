@@ -79,12 +79,8 @@ material = SubResource("StandardMaterial3D_js7pq")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Node3D" parent="." instance=ExtResource("3_bcbcq")]
-transform = Transform3D(0.101647, 0, -0.994821, 0, 1, 0, 0.994821, 0, 0.101647, -6.68252, 14.8897, 26.9849)
-
-[node name="Node3D2" parent="." node_paths=PackedStringArray("destinaiton") instance=ExtResource("4_js7pq")]
+[node name="Node3D2" parent="." instance=ExtResource("4_js7pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7582, 2.91656, -2.9563)
-destinaiton = NodePath("../Node3D")
 
 [node name="PushZone" parent="." instance=ExtResource("5_eu7l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1671, 12.5442, 20.1361)
@@ -97,5 +93,8 @@ added_vel = Vector3(-300, 0, 300)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.710382, 0.513489, 0.481339, 0, -0.683898, 0.729578, 0.703816, -0.518279, -0.485829, -6.98684, 31.1902, 4.42251)
 light_color = Color(0.203922, 0.380392, 0.313726, 1)
+
+[node name="Node3D" parent="." instance=ExtResource("3_bcbcq")]
+transform = Transform3D(-0.162138, 0, -0.986768, 0, 1, 0, 0.986768, 0, -0.162138, -6.40312, 14.6602, 27.016)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
