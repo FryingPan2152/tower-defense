@@ -22,7 +22,8 @@ func _physics_process(delta: float) -> void:
 		nav.target_position = destination.global_position
 		
 	if !is_on_floor(): 
-		velocity.y += -10 * delta
+		#velocity.y += -10 * delta
+		pass
 	
 	var np = nav.get_next_path_position()
 	var direction = (np - global_position).normalized()
