@@ -152,7 +152,7 @@ transform = Transform3D(0.710382, 0.513489, 0.481338, 0, -0.683898, 0.729578, 0.
 light_color = Color(0.203922, 0.380392, 0.313726, 1)
 
 [node name="Destination" parent="." instance=ExtResource("3_bcbcq")]
-transform = Transform3D(-0.162138, 0, -0.986768, 0, 1, 0, 0.986768, 0, -0.162138, -136.205, 317.923, 17.2922)
+transform = Transform3D(0.0357718, 0, 0.99936, 0, 1, 0, -0.99936, 0, 0.0357718, -219.009, 317.923, -4.77831)
 base_health = 100000.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
