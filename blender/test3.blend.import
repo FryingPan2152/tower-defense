@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2e5ixpyxdk61"
-path="res://.godot/imported/test1.blend-0c40b23867cc4029378c9a8ed45fba3a.scn"
+uid="uid://ca5khi2tbbchd"
+path="res://.godot/imported/test3.blend-edc4643831a24954a32d5c61013ff929.scn"
 
 [deps]
 
-source_file="res://blender/test1.blend"
-dest_files=["res://.godot/imported/test1.blend-0c40b23867cc4029378c9a8ed45fba3a.scn"]
+source_file="res://blender/test3.blend"
+dest_files=["res://.godot/imported/test3.blend-edc4643831a24954a32d5c61013ff929.scn"]
 
 [params]
 
@@ -56,4 +56,4 @@ blender/materials/export_materials=1
 blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
-gltf/naming_version=0
+gltf/naming_version=2
