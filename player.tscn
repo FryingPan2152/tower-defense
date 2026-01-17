@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://tf6nk4rok528"]
+[gd_scene load_steps=6 format=3 uid="uid://tf6nk4rok528"]
 
 [ext_resource type="Script" uid="uid://dhkyami0b2fy7" path="res://Player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bnftusb3y23n1" path="res://player_ui_money.tscn" id="2_i3pqv"]
@@ -10,8 +10,12 @@ font_color = Color(0.607843, 0.65098, 0.929412, 1)
 outline_color = Color(0.196078, 0.690196, 0.862745, 0.823529)
 shadow_color = Color(0.301961, 0.294118, 0.784314, 0.901961)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_onrkg"]
+top_radius = 0.0
+bottom_radius = 0.65
+
 [node name="Camera3D" type="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.848649, 0.528957, 0, -0.528957, 0.848649, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99970484, 0.024292588, 0, -0.024292588, 0.99970484, 0, 0, 0)
 script = ExtResource("1_onrkg")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -150,6 +154,21 @@ offset_left = 960.0
 offset_top = 440.0
 offset_right = 960.0
 offset_bottom = 440.0
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.675, 0, 0, 0, 0.44985116, -0.01736338, 0, 0.011575585, 0.6747766, 0.0023845285, -0.38833857, 0.2342564)
+gi_mode = 2
+gi_lightmap_texel_scale = 10.0
+mesh = SubResource("CylinderMesh_onrkg")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.49983454, -0.012861757, 0, 0.012861757, 0.49983454, 0, -0.0241602, 0.24710973)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGSphere3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.49983454, -0.012861757, 0, 0.012861757, 0.49983454, 0.69794226, -0.8294082, -0.03709507)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGSphere3D/CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99966925, -0.025723517, 0, 0.025723517, 0.99966925, -2.8156633, 0.06488097, -0.061387718)
 
 [connection signal="pressed" from="tower_inventory/Tower1Button" to="." method="_on_tower_1_button_pressed"]
 [connection signal="pressed" from="tower_inventory/Tower2Button" to="." method="_on_tower_2_button_pressed"]
