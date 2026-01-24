@@ -1,9 +1,11 @@
+class_name Player
 extends Camera3D
 
 var mouseposition = Vector2(0,0)
 @onready var raycast:=$RayCast3D
 var tower_selected = 1
 @onready var inventory_control := $tower_inventory
+@onready var player_body : PlayerBody = $"../"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,52 +24,13 @@ func _process(delta):
 		inventory_control.visible = !inventory_control.visible
 	
 	#position.x += 10
-	if Input.is_action_pressed("forward"):
-		
-		var forward_no_z = -basis.z
-		forward_no_z.y = 0
-		
-		if Input.is_action_pressed("camer speed modifier"):
-			position += forward_no_z * delta * 100
-		else:
-			position += forward_no_z * delta * 10
-		
-		
-	if Input.is_action_pressed("backward"):
-		var forward_no_z = basis.z
-		forward_no_z.y = 0
-		if Input.is_action_pressed("camer speed modifier"):
-			position += forward_no_z * delta * 100
-		else:
-			position += forward_no_z * delta * 10
-		
-		position += forward_no_z * delta * 10
-	if Input.is_action_pressed("left"):
-		position += -basis.x * delta * 10
-		if Input.is_action_pressed("camer speed modifier"):
-			position += -basis.x * delta * 100
-		else:
-			position += -basis.x * delta * 10
-	if Input.is_action_pressed("right"):
-		position += basis.x * delta * 10
-		if Input.is_action_pressed("camer speed modifier"):
-			position += +basis.x * delta * 100
-		else:
-			position += +basis.x * delta * 10
-	if Input.is_action_pressed("Up"):
-		position += +basis.z * delta * 40
-	if Input.is_action_pressed("Down"):
-		position += -basis.z * delta * 40
-	
-	
-	
 	#print(mouseposition)
 	#var project = project_position(mouseposition,1.0)
 	#var direction = (project - position).normalized()
 	var direction = project_local_ray_normal(mouseposition)
 	raycast.target_position=direction*50
 	if raycast.is_colliding():
-		if Input.is_action_just_pressed("click"):
+		if Input.is_action_just_pressed("click") and player_body.flying:
 			var tower: Tower
 			if tower_selected == 1:
 				tower = preload("res://Base_tower.tscn").instantiate()
